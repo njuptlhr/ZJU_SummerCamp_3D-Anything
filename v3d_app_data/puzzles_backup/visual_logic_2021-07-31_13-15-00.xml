@@ -1,0 +1,656 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="785.9999999999999" scrolly="430.49999999999994" scale="0.9"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="1068.6167793273926" scrolly="3381.0521545410156" scale="0.9070294784580487">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="~^d`7Uf5A4SS([[Z^bwk" type="">scene_flag</variable>
+      <variable id="@92#C8o-[!_J8rsMvR/C" type="">cam_pos_x</variable>
+      <variable id=",t!]v~p3F%^Fh1m;|[L*" type="">cam_pos_y</variable>
+      <variable id="=(58=62bH*Yxa[6IGsIr" type="">cam_pos_z</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="h@Qz8h*LG)IPROBT[FtD" x="-1150" y="-4350">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <shadow type="text">
+          <field name="TEXT"/>
+        </shadow>
+        <block type="text" id="z^;+peQ;fiKXOc7$;ce:">
+          <field name="TEXT">FontLight</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="variables_set" id="^n!tE$-8,-da:;@?=50(">
+          <field name="VAR" id="@92#C8o-[!_J8rsMvR/C">cam_pos_x</field>
+          <value name="VALUE">
+            <block type="getObjTransform" id="Sb3Ldvf9pJogU44l!t!N">
+              <field name="MODE">position</field>
+              <field name="COORD">x</field>
+              <value name="TARGETOBJ">
+                <shadow type="objectList" id="tp[lT-Y|ld1RLX2Z(|4n">
+                  <field name="FIELDNAME">Camera1</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+          <next>
+            <block type="variables_set" id="`I/yg7Y92:?Vp4`l6(qA">
+              <field name="VAR" id=",t!]v~p3F%^Fh1m;|[L*">cam_pos_y</field>
+              <value name="VALUE">
+                <block type="getObjTransform" id="MQ8zh3xVL^g]p`K}Bqqm">
+                  <field name="MODE">position</field>
+                  <field name="COORD">y</field>
+                  <value name="TARGETOBJ">
+                    <shadow type="objectList" id="r1{7pG^CevAiIoK_Oid_">
+                      <field name="FIELDNAME">Camera1</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>
+              <next>
+                <block type="variables_set" id="x.G~[I?HtA|E+c9mYn=U">
+                  <field name="VAR" id="=(58=62bH*Yxa[6IGsIr">cam_pos_z</field>
+                  <value name="VALUE">
+                    <block type="getObjTransform" id="j5UVhn^k1ylvL@uyI,eS">
+                      <field name="MODE">position</field>
+                      <field name="COORD">z</field>
+                      <value name="TARGETOBJ">
+                        <shadow type="objectList" id=")asDWI^UdbjYsIHQ?8m1">
+                          <field name="FIELDNAME">Camera1</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setObjTransform" id="0iV@,5iUpZX_=5jXF.QZ">
+                      <field name="MODE">position</field>
+                      <field name="OFFSET">FALSE</field>
+                      <value name="TARGETOBJ">
+                        <shadow type="objectList" id="nlsqYJSo2K(_2q0[`!~e">
+                          <field name="FIELDNAME">Light</field>
+                        </shadow>
+                      </value>
+                      <value name="X">
+                        <block type="variables_get" id="VxO;1ksoAyssLw)_q_?I">
+                          <field name="VAR" id="@92#C8o-[!_J8rsMvR/C">cam_pos_x</field>
+                        </block>
+                      </value>
+                      <value name="Y">
+                        <block type="variables_get" id="G[[gx]^It.O;h3TJZwm{">
+                          <field name="VAR" id=",t!]v~p3F%^Fh1m;|[L*">cam_pos_y</field>
+                        </block>
+                      </value>
+                      <value name="Z">
+                        <block type="variables_get" id="G*=j%`k{{n05?wm`i|ve">
+                          <field name="VAR" id="=(58=62bH*Yxa[6IGsIr">cam_pos_z</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="ra*H`uT9cdKfT)#WlSoP" x="-30" y="-4190">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <shadow type="text">
+          <field name="TEXT"/>
+        </shadow>
+        <block type="text" id="N9a`|mF5fH~]blPy%AcJ">
+          <field name="TEXT">Export_GLTF</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="downloadFile" id="e(r2x}kC}$Pfo+AY_T,*">
+          <value name="CONTENTS">
+            <shadow type="text" id="_SMu(Mw{WGoVJn/`-8zV">
+              <field name="TEXT">data:,</field>
+            </shadow>
+            <block type="exportToGLTF" id="F#e~J0ukw6$CUG2pW,O_">
+              <field name="ONLY_VISIBLE">TRUE</field>
+              <field name="EXPORT_ANIMS">FALSE</field>
+              <field name="BINARY">FALSE</field>
+              <value name="OBJ_NAME">
+                <shadow type="objectList" id="gQ|O#ONStyN]01x_D;g`">
+                  <field name="FIELDNAME">Cube</field>
+                </shadow>
+                <block type="allObjectList" id="JgF5Sv^NSEQZn}[yl%3r"/>
+              </value>
+            </block>
+          </value>
+          <value name="FILENAME">
+            <shadow type="text" id="%[8Yod0_`0]N`@{g@]Nm">
+              <field name="TEXT">cube.gltf</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="2`Y2*8R^04xYxBmT!K,)" x="-1150" y="-4110">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <shadow type="text" id="hE?@?dL3dlTzJ@.BO#Y5">
+          <field name="TEXT"/>
+        </shadow>
+        <block type="text" id="q}qT8IM5tJc|WQ|x#!h6">
+          <field name="TEXT">Camera3</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="setActiveCamera" id="?eI0r8JD2m^r[jAjrzNf">
+          <value name="CAMERA">
+            <shadow type="objectList" id=")F(I2Q$~A}~e_(c*{r[/">
+              <field name="FIELDNAME">Camera</field>
+            </shadow>
+            <block type="objectList" id="!!+SK3C)_^ZHdu.eB2fb">
+              <field name="FIELDNAME">Camera1</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="variables_set" id="UDA;Lj7)pry22*_V6xm;" x="-10" y="-4030">
+      <field name="VAR" id="~^d`7Uf5A4SS([[Z^bwk">scene_flag</field>
+      <value name="VALUE">
+        <block type="math_number" id="VCc!`h6E9TuEOR0E19uq">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <next>
+        <block type="eventHTMLElem" id="U^uHLT0wTiuCr0s9g9GH">
+          <field name="EVENT">click</field>
+          <field name="PARENT">TRUE</field>
+          <value name="ID">
+            <shadow type="text">
+              <field name="TEXT"/>
+            </shadow>
+            <block type="text" id="k]nc4,r?{fLBlNWN/*AO">
+              <field name="TEXT">append_scene</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="controls_ifelse" id="cJ!5p`.OC%KI!_Uk@wh7">
+              <value name="IF0">
+                <block type="variables_get" id="p]o+(/5CWvPRpc:wRW`e">
+                  <field name="VAR" id="~^d`7Uf5A4SS([[Z^bwk">scene_flag</field>
+                </block>
+              </value>
+              <statement name="DO0">
+                <block type="unloadScene" id=":wDA0{YJ]L`SPscM)nvG">
+                  <value name="URL">
+                    <shadow type="text" id="0)D[guvG25B`t4?)ArV0">
+                      <field name="TEXT">MyScene2</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="appendScene" id="eHs-RA(3|p}MDAN=GDqw">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" enableonprogress="true" enableonerror="true" loadcameras="true" loadlights="true" enablealias="true"></mutation>
+                      <value name="URL">
+                        <shadow type="text" id="JKUIBEU^zw+DKo2;O#]y">
+                          <field name="TEXT">./scenes/spinner/spinner.gltf</field>
+                        </shadow>
+                      </value>
+                      <value name="ALIAS">
+                        <shadow type="text" id="rj~ZhHPzf_]E$n9E6VJ1">
+                          <field name="TEXT">MyScene1</field>
+                        </shadow>
+                      </value>
+                      <statement name="DO_PROGRESS">
+                        <block type="setHTMLElemStyle" id="0$r3O/=wo(+$@{H8v1VV">
+                          <field name="PROPERTY">width</field>
+                          <field name="PARENT">FALSE</field>
+                          <value name="VALUE">
+                            <block type="text_join" id="uv8WR2ebE,LDQW8bkyk,">
+                              <mutation items="2"/>
+                              <value name="ADD0">
+                                <block type="percentage2" id="j*KO3T]YOfcHCh{ojDYv"/>
+                              </value>
+                              <value name="ADD1">
+                                <block type="text" id="*u91K#3~R,GWat)MMcB6">
+                                  <field name="TEXT">%</field>
+                                </block>
+                              </value>
+                            </block>
+                          </value>
+                          <value name="ID">
+                            <shadow type="text">
+                              <field name="TEXT">preloader_bar</field>
+                            </shadow>
+                            <block type="text" id="+GH9Ff2R!r_DmPd_bG=3">
+                              <field name="TEXT">preloader_bar</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <statement name="DO">
+                        <block type="console.log" id="fnmTkU*H+Pkd@M@[U$PY">
+                          <value name="VALUE">
+                            <shadow type="text">
+                              <field name="TEXT">Hello, Verge!</field>
+                            </shadow>
+                            <block type="text" id="vvJL,Qj/%^j#Uywo[99N">
+                              <field name="TEXT">Load Finished!</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <statement name="DO_ERROR">
+                        <block type="console.log" id="8}C@c1osBHow/!R3Nh1L">
+                          <value name="VALUE">
+                            <shadow type="text">
+                              <field name="TEXT">Hello, Verge!</field>
+                            </shadow>
+                            <block type="text" id="F_FF?Yrjhw[6/-mCqSiG">
+                              <field name="TEXT">Load Error!</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <next>
+                        <block type="variables_set" id="%LUgcANGXkL[4S^E0h0L">
+                          <field name="VAR" id="~^d`7Uf5A4SS([[Z^bwk">scene_flag</field>
+                          <value name="VALUE">
+                            <block type="math_number" id="yY~bI@~%z1LtG/6SH,0N">
+                              <field name="NUM">0</field>
+                            </block>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+              <statement name="ELSE">
+                <block type="unloadScene" id="P@m^Mb7guS`u6V}WI79i">
+                  <value name="URL">
+                    <shadow type="text" id="NL#_Zw[]u-b86$jKi_$V">
+                      <field name="TEXT">MyScene1</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="appendScene" id="Th2(yU6{ods_H+VCSW.M">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" enableonprogress="true" enableonerror="true" loadcameras="true" loadlights="true" enablealias="true"></mutation>
+                      <value name="URL">
+                        <shadow type="text" id="OXqr-d74xk!Z#:LJA!$s">
+                          <field name="TEXT">./scenes/Scenes.gltf</field>
+                        </shadow>
+                      </value>
+                      <value name="ALIAS">
+                        <shadow type="text" id="-3~~ljc?w~9rOTc}XONF">
+                          <field name="TEXT">MyScene2</field>
+                        </shadow>
+                      </value>
+                      <statement name="DO_PROGRESS">
+                        <block type="setHTMLElemStyle" id="oz/Yszcg0.)=wL}XoKkt">
+                          <field name="PROPERTY">width</field>
+                          <field name="PARENT">FALSE</field>
+                          <value name="VALUE">
+                            <block type="text_join" id="YXp^deba|tvlv/O4vv7G">
+                              <mutation items="2"/>
+                              <value name="ADD0">
+                                <block type="percentage2" id="m.u!^T_#`(v}eOId21Jb"/>
+                              </value>
+                              <value name="ADD1">
+                                <block type="text" id="KkB5WO2w^`Ljs]_wN;.Z">
+                                  <field name="TEXT">%</field>
+                                </block>
+                              </value>
+                            </block>
+                          </value>
+                          <value name="ID">
+                            <shadow type="text">
+                              <field name="TEXT">preloader_bar</field>
+                            </shadow>
+                            <block type="text" id="OS%!F:ye.Uc.;/7Dy8T%">
+                              <field name="TEXT">preloader_bar</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <statement name="DO">
+                        <block type="console.log" id="vj/r~~%Tqgd8NLAxbTVe">
+                          <value name="VALUE">
+                            <shadow type="text">
+                              <field name="TEXT">Hello, Verge!</field>
+                            </shadow>
+                            <block type="text" id="m!KwLhxnzvx([+G)3},n">
+                              <field name="TEXT">Load Finished!</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <statement name="DO_ERROR">
+                        <block type="console.log" id="D|CDXu,,Ihob}!.(_~w7">
+                          <value name="VALUE">
+                            <shadow type="text">
+                              <field name="TEXT">Hello, Verge!</field>
+                            </shadow>
+                            <block type="text" id=".6l6Z*U$TM@d_7@rJ1=e">
+                              <field name="TEXT">Load Error!</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <next>
+                        <block type="variables_set" id=")v?Wl|07IUDf^(G7o}~V">
+                          <field name="VAR" id="~^d`7Uf5A4SS([[Z^bwk">scene_flag</field>
+                          <value name="VALUE">
+                            <block type="math_number" id="U0j{GnTX$:Et8%oo,apF">
+                              <field name="NUM">1</field>
+                            </block>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+            </block>
+          </statement>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="5%_2Qpwp_cbE+a653v~%" x="-1130" y="-3930">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <shadow type="text">
+          <field name="TEXT"/>
+        </shadow>
+        <block type="text" id="%9!!9e}MM-{?VW~vS(H4">
+          <field name="TEXT">Camera2</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="setActiveCamera" id="^?@McX^zmlD2)asYYG8;">
+          <value name="CAMERA">
+            <shadow type="objectList">
+              <field name="FIELDNAME">Camera</field>
+            </shadow>
+            <block type="objectList" id="o}F,$d*^%%Z_]5Uj*[CH">
+              <field name="FIELDNAME">Camera2</field>
+            </block>
+          </value>
+          <next>
+            <block type="autoRotateCamera" id=".vKPh{#?p(d1+VUx-7H[">
+              <field name="ON_OFF">ON</field>
+              <value name="SPEED">
+                <shadow type="math_number" id="-$#BWkiJ([Zy}4JXPJj~">
+                  <field name="NUM">2</field>
+                </shadow>
+              </value>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="H63)~R]@zK_;A9T*Q5K$" x="-1130" y="-3710">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <shadow type="text" id="@}3[|:3_QM7dq-8pWDJ=">
+          <field name="TEXT"/>
+        </shadow>
+        <block type="text" id=".DIC,bY0[[XdC{OFs}p@">
+          <field name="TEXT">Camera_Move</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="setActiveCamera" id="wxLZDO~DM|E9riyzO+*8">
+          <value name="CAMERA">
+            <shadow type="objectList" id="*{oE$9WnRf+HD^~wwKM[">
+              <field name="FIELDNAME">Camera</field>
+            </shadow>
+            <block type="objectList" id="+QBYX!P|(]93YckE%vn|">
+              <field name="FIELDNAME">Camera</field>
+            </block>
+          </value>
+          <next>
+            <block type="playAnimationAdv" id="ut6z)toMx@{PcW[NXx+k">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+              <field name="REVERSED">FALSE</field>
+              <field name="LOOP">LoopOnce</field>
+              <value name="VALUE">
+                <shadow type="animationList" id="_P,].D]EbSApw,(CZgJa">
+                  <field name="FIELDNAME">&lt;none&gt;</field>
+                </shadow>
+                <block type="getAnimations" id="[9Eb_+?h-7~#mIEZ8I6v">
+                  <value name="OBJECTINPUT">
+                    <shadow type="objectList" id="^a2N{(A.cVwY)u=qiAbg">
+                      <field name="FIELDNAME">&lt;none&gt;</field>
+                    </shadow>
+                    <block type="objectList" id="zZ/r^JIce=HIoYk*z4{a">
+                      <field name="FIELDNAME">Camera</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="XZ*z_]d@7KFCxN,IXsp8" x="-1130" y="-3550">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <shadow type="text">
+          <field name="TEXT"/>
+        </shadow>
+        <block type="text" id="QE6Yr+gkHSnN^pcw(6)b">
+          <field name="TEXT">load_scene</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="loadScene" id="36#Ei9(5ZXQ$7,)Q+*RA">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" enableonprogress="true" enableonerror="true" enablealias="true"></mutation>
+          <value name="URL">
+            <shadow type="text" id="f,B!5rHZBk^[7+e9_Ob!">
+              <field name="TEXT">./scenes/augmented_reality/augmented_reality.gltf</field>
+            </shadow>
+          </value>
+          <value name="ALIAS">
+            <shadow type="text" id="^KEr(?sPh7N|=cb-{%Hl">
+              <field name="TEXT">MyScene</field>
+            </shadow>
+          </value>
+          <statement name="DO_PROGRESS">
+            <block type="setHTMLElemStyle" id="Xaqf:6HoiUaKB8GXgAO6">
+              <field name="PROPERTY">width</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text_join" id="):^m*{t*@BFIZ{eu[X`e">
+                  <mutation items="2"/>
+                  <value name="ADD0">
+                    <block type="percentage2" id="oI~(23$NTKW8m=I1f;r*"/>
+                  </value>
+                  <value name="ADD1">
+                    <block type="text" id="}RI{o_Y9;l=,GW_AI1fq">
+                      <field name="TEXT">%</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <value name="ID">
+                <shadow type="text">
+                  <field name="TEXT">preloader_bar</field>
+                </shadow>
+                <block type="text" id="/Yw7/zAHxh7uiYu}JqYE">
+                  <field name="TEXT">preloader_bar</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <statement name="DO">
+            <block type="console.log" id="*~)d^Rr~fx(kQ4A~k_~U">
+              <value name="VALUE">
+                <shadow type="text">
+                  <field name="TEXT">Hello, Verge!</field>
+                </shadow>
+                <block type="text" id="p`yWcB`^@X6+SkSdy6qn">
+                  <field name="TEXT">Load Finished!</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <statement name="DO_ERROR">
+            <block type="console.log" id="j!oR?.,Ky8eOJ?$@i]~{">
+              <value name="VALUE">
+                <shadow type="text">
+                  <field name="TEXT">Hello, Verge!</field>
+                </shadow>
+                <block type="text" id="T@{aVKI9;gSsY}@jz?B|">
+                  <field name="TEXT">Load Error!</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="Kp}wqr@jo^ji;vBJ;:FC" x="-1110" y="-3270">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <shadow type="text">
+          <field name="TEXT"/>
+        </shadow>
+        <block type="text" id="x^.3UMCVv,J4`~pA1%db">
+          <field name="TEXT">unload_scene</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="unloadScene" id="2w!RvjQ[jPe[lm$N[?N{">
+          <value name="URL">
+            <shadow type="text" id="NwJug^}#`TOmK|pNkQ?;">
+              <field name="TEXT">MyScene</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="unloadScene" id="dG6ZD+|=_|j}B=19vw3q">
+              <value name="URL">
+                <shadow type="text" id="ZN$QNSL=v]2AJ),YG@.^">
+                  <field name="TEXT">MyScene1</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="unloadScene" id="4+ojXF_lu_BM8]7e2i`t">
+                  <value name="URL">
+                    <shadow type="text" id="J?:k}?wPCf`0I2CNUpxj">
+                      <field name="TEXT">MyScene2</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="$oj.Em_p+?G`NiMyZi:O" x="-1110" y="-3110">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <shadow type="text" id=":q/pc-OxNtI^$lRm#RM|">
+          <field name="TEXT"/>
+        </shadow>
+        <block type="text" id="9f0`uSjG[ra|!%H0wUOi">
+          <field name="TEXT">append_lights</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="appendScene" id="gcbZH]AR~[*d?`j{QAbS">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" enableonprogress="true" enableonerror="true" loadcameras="true" loadlights="true" enablealias="true"></mutation>
+          <value name="URL">
+            <shadow type="text" id="T5uVLo3bm_~_nEIBE#EQ">
+              <field name="TEXT">./lights_and_cameras/Lights_and_Cameras.gltf</field>
+            </shadow>
+          </value>
+          <value name="ALIAS">
+            <shadow type="text" id="D3[W7T#GhQj!?;cR.^$=">
+              <field name="TEXT">MyLights</field>
+            </shadow>
+          </value>
+          <statement name="DO_PROGRESS">
+            <block type="setHTMLElemStyle" id="oQuT9E|W_(eQ=)^0yvqA">
+              <field name="PROPERTY">width</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text_join" id="^!hSeRGJ.$uh,mXU75f.">
+                  <mutation items="2"/>
+                  <value name="ADD0">
+                    <block type="percentage2" id="1XD:D1+_j--Sd4xXdklh"/>
+                  </value>
+                  <value name="ADD1">
+                    <block type="text" id="DR:~{]~Rfbim$,Fb$UFX">
+                      <field name="TEXT">%</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <value name="ID">
+                <shadow type="text" id="|991/23UD|u8d)^WFdE^">
+                  <field name="TEXT">preloader_bar</field>
+                </shadow>
+                <block type="text" id="Rgp?P7JnY3^GTIV=Q(L0">
+                  <field name="TEXT">preloader_bar</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <statement name="DO">
+            <block type="console.log" id=":2D#V_[ltIo%.8%69R@1">
+              <value name="VALUE">
+                <shadow type="text" id="}|q-J3d`%g{g,8?^BDNf">
+                  <field name="TEXT">Hello, Verge!</field>
+                </shadow>
+                <block type="text" id="~HjV72%IjW}7T{0?7r=)">
+                  <field name="TEXT">Load Finished!</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <statement name="DO_ERROR">
+            <block type="console.log" id="Z*yAPK]fa5g5uw(zpj+p">
+              <value name="VALUE">
+                <shadow type="text">
+                  <field name="TEXT">Hello, Verge!</field>
+                </shadow>
+                <block type="text" id=";m^SvmoRkiyhk;Jg-!+4">
+                  <field name="TEXT">Load Error!</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="0PxUAvM]U7*tK=Rk{d7#" x="-1130" y="-2790">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <shadow type="text">
+          <field name="TEXT"/>
+        </shadow>
+        <block type="text" id="y`O-a?Pul;GH*iZIVa~u">
+          <field name="TEXT">unload_lights</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="unloadScene" id="e`OyHLzmW9Ni)pgQz6:%">
+          <value name="URL">
+            <shadow type="text" id="`h#^A|SZjr$p*l)3F?[/">
+              <field name="TEXT">MyLights</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1134" viewport-y="28" viewport-w="768" viewport-h="468.5" viewport-hidden="true" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

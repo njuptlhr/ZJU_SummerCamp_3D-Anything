@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- __V3D_PUZZLES__ - enable Puzzles button in the App Manager -->
+<!-- __V3D_TEMPLATE__ - template-based file; delete this line to prevent this file from being updated -->
+<html lang="en">
+<head>
+  <title>Verge3D Web Interactive</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <!-- Search Engines -->
+  <meta name="description" content="Interactive 3D Web application made with Verge3D. Immerse yourself in amazing graphics experience offered by state-of-the WebGL and HTML5 technologies.">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Verge3D Web Interactive">
+  <meta name="twitter:description" content="Interactive 3D Web application made with Verge3D. Immerse yourself in amazing graphics experience offered by state-of-the WebGL and HTML5 technologies.">
+  <meta name="twitter:image:src" content="https://cdn.soft8soft.com/images/player_socials.jpg">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Verge3D Web Interactive">
+  <meta property="og:description" content="Interactive 3D Web application made with Verge3D. Immerse yourself in amazing graphics experience offered by state-of-the WebGL and HTML5 technologies.">
+  <meta property="og:image" content="https://cdn.soft8soft.com/images/player_socials.jpg">
+  <meta property="og:type" content="website">
+
+  <meta name="generator" content="Verge3D 3.7.1">
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+  <link rel="manifest" href="media/manifest.json">
+  <link rel="mask-icon" href="media/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+
+  
+  <script src="v3d.js"></script>
+  <script src="3D_Anything.js"></script>
+  <!-- multi-download -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <script src="//libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>		
+
+  <link rel="stylesheet" type="text/css" href="3D_Anything.css">
+
+    <!-- plugin scripts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/piloz-icons.css">
+
+    <!-- theme styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+		.share-btn {
+		display: inline-block;
+		color: #ffffff;
+		border: none;
+		padding: 0.1em 0.6em;
+		outline: none;
+		text-align: center;
+		font-size: 0.9em;
+		margin: 0 0.2em;
+		}
+
+		.share-btn:focus,
+		.share-btn:hover {
+		text-decoration: none;
+		opacity: 0.8;
+		}
+
+		.share-btn:active {
+		color: #e2e2e2;
+		}
+
+	</style>
+</head>
+
+<body>
+
+	
+  <div id="v3d-container">
+    <div id="fullscreen_button" class="fullscreen-button fullscreen-open" title="Toggle fullscreen mode"></div>
+
+		<div class="main-nav__main-navigation">
+			<ul class="main-nav__navigation-box one-page-scroll-menu">
+				<li class="dropdown  scrollToLink">
+					<a>Camera</a>
+					<ul>
+						<li><a class="share-btn" id = "Camera">Camera</a></li>
+						<li><a class="share-btn" id = "Camera1">Camera1</a></li>
+						<li><a class="share-btn" id = "Camera2">Camera2</a></li>
+						<li><a class="share-btn" id = "Camera3">Camera3</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown  scrollToLink">
+					<a>Light</a>
+					<ul>
+						<li><a class="share-btn" id = "FontLight">FontLight</a></li>
+						<li><a class="share-btn" id = "SpotLight" >Spot Light</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown  scrollToLink">
+					<a>Export</a>
+					<ul>
+						<li><a class="share-btn" id = "Export_GLTF">Export GLTF</a></li>
+						<li><a class="share-btn" id = "Export_Video" >Render Pictures & <br/> Amitations</a></li>
+						<li><a class="share-btn" id = "Render_pics">ScreenShot</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown  scrollToLink">
+					<a>Import</a>
+					<ul>
+						<li><a class="share-btn" id = "load_scene">Load Scene</a></li>
+						<li><a class="share-btn" id = "append_scene">Append Scene</a></li>
+						<li><a class="share-btn" id = "unload_scene">Unload Scene</a></li>
+						<li><a class="share-btn" id = "append_object">Append Object</a></li>
+						<li><a class="share-btn" id = "unload_object">Unload Object</a></li>
+					</ul>
+				</li>
+			</ul><!-- /.main-nav__navigation-box -->
+		</div><!-- /.main-nav__main-navigation -->
+  </div>
+
+
+  
+</body>
+
+</html>
